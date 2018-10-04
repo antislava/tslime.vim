@@ -24,6 +24,10 @@ function! Send_to_Tmux(text)
   call Send_keys_to_Tmux('"'.escape(a:text, '\"$`').'"')
 endfunction
 
+function! Send_Hask_to_Tmux(text)
+  call Send_keys_to_Tmux('":{\n'.escape(a:text, '\"$`').'\n:}"')
+endfunction
+
 function! s:tmux_target()
   return '"' . g:tslime['session'] . '":' . g:tslime['window'] . "." . g:tslime['pane']
 endfunction
@@ -35,6 +39,10 @@ endfunction
 
 function! SendToTmux(text)
   call Send_to_Tmux(a:text)
+endfunction
+
+function! SendHaskToTmux(text)
+  call Send_Hask_to_Tmux(a:text)
 endfunction
 
 " Session completion
@@ -126,6 +134,10 @@ endfunction
 vnoremap <silent> <Plug>SendSelectionToTmux "ry :call Send_to_Tmux(@r)<CR>
 nmap     <silent> <Plug>NormalModeSendToTmux vip<Plug>SendSelectionToTmux
 
+vnoremap <silent> <Plug>SendHaskellToTmux "ry :call Send_Hask_to_Tmux(@r)<CR>
+nmap     <silent> <Plug>NormalModeHaskellToTmux vip<Plug>SendHaskellToTmux
+
 nnoremap          <Plug>SetTmuxVars :call <SID>Tmux_Vars()<CR>
 
 command! -nargs=* Tmux call Send_to_Tmux('<Args><CR>')
+command! -nargs=* Tmux call Send_Hask_to_Tmux('<Args><CR>')
