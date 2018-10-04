@@ -25,7 +25,7 @@ function! Send_to_Tmux(text)
 endfunction
 
 function! Send_Hask_to_Tmux(text)
-  call Send_keys_to_Tmux('":{'.escape(a:text, '\"$`').':}"')
+  call Send_keys_to_Tmux('":{'.escape(a:text, '\"$`').':}"')
 endfunction
 
 function! s:tmux_target()
