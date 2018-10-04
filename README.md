@@ -1,6 +1,29 @@
 tslime.vim
 ==========
 
+Fork notes
+--------
+Goal: Customising the plugin to Haskell repl (ghci)
+Summary of additions:
+* Proper backtick escaping
+* The version of main text-send functions surrounding the text argument with `:{` and `:}`
+
+Example vim shortcut definitions in `vim.rc`:
+
+```vim
+vmap <silent> <Leader>rs <Plug>SendSelectionToTmux
+nmap <silent> <Leader>rs <Plug>NormalModeSendToTmux
+
+vmap <silent> <Leader>rt <Plug>SendHaskellToTmux
+nmap <silent> <Leader>rt <Plug>NormalModeHaskellToTmux
+
+nmap <silent> <Leader>rv <Plug>SetTmuxVars
+
+```
+
+--------
+--------
+
 This is a simple vim script to send portion of text from a vim buffer to a
 running tmux session.
 
