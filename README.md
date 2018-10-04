@@ -4,9 +4,10 @@ tslime.vim
 Fork notes
 --------
 Goal: Customising the plugin to Haskell repl (ghci)
+
 Summary of additions:
 * Proper backtick escaping
-* The version of main text-send functions surrounding the text argument with `:{` and `:}`
+* Versions of the main tmux-send functions surrounding the text argument with `:{` and `:}`
 
 Example vim shortcut definitions in `vim.rc`:
 
