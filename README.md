@@ -20,8 +20,6 @@ nmap <silent> <Leader>rt <Plug>NormalModeHaskellToTmux
 nmap <silent> <Leader>rv <Plug>SetTmuxVars
 
 ```
-
---------
 --------
 
 This is a simple vim script to send portion of text from a vim buffer to a
