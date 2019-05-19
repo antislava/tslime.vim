@@ -140,4 +140,3 @@ nmap     <silent> <Plug>NormalModeHaskellToTmux vip<Plug>SendHaskellToTmux
 nnoremap          <Plug>SetTmuxVars :call <SID>Tmux_Vars()<CR>
 
 command! -nargs=* Tmux call Send_to_Tmux('<Args><CR>')
-command! -nargs=* Tmux call Send_Hask_to_Tmux('<Args><CR>')
